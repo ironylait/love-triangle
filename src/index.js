@@ -4,16 +4,16 @@ module.exports = function getLoveTrianglesCount(preferences = []) {
 
     for (var i = 0; i < preferences.length; i++) { 
       
-      var firstSpichonee  = preferences[i];
-      var secondSpichonee = preferences[firstSpichonee - 1];
-      var thirdSpichonee  = preferences[secondSpichonee - 1]; 
+      var secondSpichonee = preferences[i];                   //i = 4 // 6
+      var thirdSpichonee  = preferences[secondSpichonee - 1]; //i = 5 // 4
+      var firstSpichonee  = preferences[thirdSpichonee - 1];  //i = 3 // 5
 
-      if (thirdSpichonee === i + 1) {
+      if (firstSpichonee === i + 1) {
         counter++;
       }
     }
 
- triangles =(Math.floor(counter / 3)) ;
+ triangles = (Math.floor(counter / 3));
  return triangles; 
 };
 
